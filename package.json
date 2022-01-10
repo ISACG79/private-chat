@@ -4,7 +4,8 @@
   "description": "test chat nodejs & socket.io",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index",
+    "test": "jest --ci --testResultsProcessor=jest-junit"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +15,11 @@
     "socket.io": "^2.1.1",
     "socket.io-stream": "^0.9.1",
     "socketio-file-upload": "^0.6.4"
+  },
+  "devDependencies": {
+    "jest": "^27.4.3",
+    "jest-junit-reporter": "^1.1.0",
+    "jest-unit": "^0.0.1",
+    "supertest": "^6.1.6"
   }
 }
