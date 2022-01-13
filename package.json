@@ -7,6 +7,14 @@
     "start": "node index",
     "test": "jest --ci --testResultsProcessor=jest-junit"
   },
+  "jest": {
+    "verbose": true,
+    "testResultsProcessor": "jest-junit"
+  },
+  "jest-junit": {
+    "suiteName": "Test Suite",
+    "output": "./junit.xml"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
