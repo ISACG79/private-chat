@@ -93,7 +93,7 @@ pipeline {
 
             }
 
-            junit '*/junit.xml'
+            //junit '*/junit.xml'
 
         }
 
