@@ -16,7 +16,7 @@ pipeline {
 
         stage("Fetch repository") {
             steps {
-                git 'https://github.com/cristi623/real-time-Private-Chat-using-Socket.io-Nodejs-mySql-.git'
+                git 'https://github.com/ISACG79/private-chat.git'
             }
         }
 
@@ -82,11 +82,11 @@ pipeline {
 
                 if(ON_SUCCESS_SEND_EMAIL == true){
                     emailext body: "Pipeline SUCCESS!\nJOB_NAME: ${JOB_NAME}\nBUILD_NUMBER: ${BUILD_NUMBER}\nBUILD_URL: ${BUILD_URL}",
-                    subject: 'Always is good!', to: 'borodin.cristian@isa.utm.md'
+                    subject: 'Always is good!', to: 'isac.gheorghe@isa.utm.md'
                 }
                 else{
                     emailext body: "Pipeline ERROR!\nJOB_NAME: ${JOB_NAME}\nBUILD_NUMBER: ${BUILD_NUMBER}\nBUILD_URL: ${BUILD_URL}",
-                    subject: 'Oh! You have some errors!', to: 'borodin.cristian@isa.utm.md'
+                    subject: 'Oh! You have some errors!', to: 'isac.gheorghe@isa.utm.md'
                 }
 
 
