@@ -1,0 +1,38 @@
+
+version: '1.0'
+services:
+  nodejs:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql
+    networks:
+      - frontend
+      - backend
+    environment:
+      - MYSQL_HOST=localhost
+      - MYSQL_USER=root
+      - MYSQL_PASS=root
+      - MYSQL_DB=chat2
+    volumes:
+      - .:/public
+    ports:
+      - "8088:4320"
+    container_name: cloned-tidpp-app
+
+  mysql:
+    image: mysql:5.7
+    networks:
+        - backend
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_DATABASE=chat2
+    container_name: cloned-tidpp-mysql
+  
+
+networks:
+  frontend:
+  backend:
