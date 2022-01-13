@@ -1,1 +1,13 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Test Suite" tests="4" failures="0" errors="0" time="1.972">
+  <testsuite name="jest-junit" errors="0" failures="0" skipped="0" timestamp="2022-01-13T14:07:49" time="1.722" tests="4">
+    <testcase classname="jest-junit positive numbers should add up" name="jest-junit positive numbers should add up" time="0.003">
+    </testcase>
+    <testcase classname=" GET / method statusCode should be 200" name=" GET / method statusCode should be 200" time="0.101">
+    </testcase>
+    <testcase classname=" GET /database statusCode should be 200" name=" GET /database statusCode should be 200" time="0.018">
+    </testcase>
+    <testcase classname=" Check if database is connected" name=" Check if database is connected" time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>

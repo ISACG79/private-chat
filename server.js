@@ -54,23 +54,7 @@ app.use(express.static("public"));
 io.on("connection", function (client) {
 	console.log("Client connected...");
 
-	// Upload File to uploads director
-	client.on('send-file', function (name, buffer, userid) {
-		var fs = require('fs');
-		var timestamp = new Date().getTime();
-		var imgName = timestamp + "-" + name
-		var fileName = __dirname + '/uploads/' + imgName;
-		fs.open(fileName, 'a', 0755, function (err, fd) {
-			if (err) throw err;
-			fs.write(fd, buffer, null, 'Binary', function (err, written, buff) {
-				fs.close(fd, function () {
-					console.log('File saved successful!');
-					client.emit("send_file", imgName, buffer, userid);
-					client.broadcast.emit("send_file", imgName, buffer, userid);
-				});
-			})
-		});
-	});
+	
 
 	// preview File using base64
 	client.on('preview-file', function (base64, userid) {

@@ -44,15 +44,6 @@ test('Check if database is connected', done => {
 });
 
 
-test('Max 100 chat messages', done => {
-	function callback(data) {
-		expect(data).toBeLessThan(100);
-		done();
-	}
-
-	getDbMessages(callback);
-});
-
 afterAll(() => {
 	db.end();
 	server.close();
